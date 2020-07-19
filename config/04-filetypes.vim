@@ -2,7 +2,7 @@ if has("autocmd")
   augroup makefile
     autocmd!
     " don't expand tab to space in Makefiles
-    autocmd filetype make setlocal noexpandtab
+    autocmd FileType make setlocal noexpandtab
   augroup END
 endif
 
