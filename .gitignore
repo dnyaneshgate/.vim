@@ -1,0 +1,10 @@
+/plugged
+/backup
+/tmp
+/tags
+/yankring
+/sessions
+
+.netrwhist
+.viminfo
+.NERDTreeBookmarks
