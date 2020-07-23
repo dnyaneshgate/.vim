@@ -235,20 +235,20 @@ set matchtime=4   " blink matching braces for 0.4s
 set matchpairs+=<:>         " make < and > match
 runtime macros/matchit.vim  " enable extended % matching
 
-set virtualedit=insert    " allow the cursor to go everywhere (insert)
-set virtualedit+=onemore  " allow the cursor to go just past the end of line
-set virtualedit+=block    " allow the cursor to go everywhere (visual block)
+" set virtualedit=insert    " allow the cursor to go everywhere (insert)
+" set virtualedit+=onemore  " allow the cursor to go just past the end of line
+" set virtualedit+=block    " allow the cursor to go everywhere (visual block)
 
 set backspace=indent,eol,start " allow backspacing over everything (insert)
 
 set expandtab     " insert spaces instead of tab, CTRL-V+Tab inserts a real tab
-set tabstop=4     " 1 tab == 2 spaces
+set tabstop=4     " 1 tab == 4 spaces
 set softtabstop=4 " number of columns used when hitting TAB in insert mode
 set smarttab      " insert tabs on the start of a line according to shiftwidth
 set autoindent    " enable autoindenting
 set smartindent   " enable smart indent
 set copyindent    " copy the previous indentation on autoindenting
-set shiftwidth=4  " indent with 2 spaces
+set shiftwidth=4  " indent with 4 spaces
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
 
 set lbr     " Linebreak on 500 characters
