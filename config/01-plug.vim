@@ -118,4 +118,7 @@ call plug#begin(expand(vimplug_path.'/plugged'))
     Plug 'xolox/vim-session'
     Plug 'xolox/vim-shell'
 
+    " Asynchronous Lint Engine
+    Plug 'dense-analysis/ale'
+
 call plug#end()

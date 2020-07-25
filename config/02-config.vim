@@ -255,14 +255,14 @@ set lbr     " Linebreak on 500 characters
 set tw=500
 
 " quick insertion of newline in normal mode with <CR>
-if has("autocmd")
-  nnoremap <silent> <CR> :put=''<CR>
-  augroup newline
-    autocmd!
-    autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
-    autocmd CmdwinEnter * nnoremap <buffer> <CR> <CR>
-  augroup END
-endif
+" if has("autocmd")
+"   nnoremap <silent> <CR> :put=''<CR>
+"   augroup newline
+"     autocmd!
+"     autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
+"     autocmd CmdwinEnter * nnoremap <buffer> <CR> <CR>
+"   augroup END
+" endif
 
 set completeopt=longest,menuone,preview " better completion
 
