@@ -33,3 +33,14 @@ let g:easytags_dynamic_files = 1
 
 let g:easytags_include_members = 1
 highlight link cMember Special
+
+if has("unix")
+    let s:uname = system("uname -s")
+    if s:uname == "SunOS"
+        if executable("ectags")
+            let g:easytags_cmd  = "ectags"
+        elseif executable("/opt/csw/bin/ectags")
+            let g:easytags_cmd = "/opt/csw/bin/ectags"
+        endif
+    endif
+endif
