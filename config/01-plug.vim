@@ -121,4 +121,11 @@ call plug#begin(expand(vimplug_path.'/plugged'))
     " Asynchronous Lint Engine
     Plug 'dense-analysis/ale'
 
+    " rainbow parenthesizing
+    Plug 'luochen1990/rainbow'
+
+    Plug 'ntpeters/vim-better-whitespace'
+
+    Plug 'chrisbra/csv.vim'
+
 call plug#end()

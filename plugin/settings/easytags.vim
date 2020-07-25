@@ -29,5 +29,7 @@ else
   let g:easytags_file = s:vimdir . "/tags"
 endif
 
+let g:easytags_dynamic_files = 1
+
 let g:easytags_include_members = 1
 highlight link cMember Special
