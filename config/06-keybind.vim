@@ -21,7 +21,7 @@ nnoremap <silent><leader>x :bnext<cr>
 nnoremap <silent><leader>z :bprevious<cr>
 
 " Open Buffer
-nnoremap <silent> <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+nnoremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap <silent> <leader>b :Buffers<CR>
 
 "" Close buffer
@@ -43,8 +43,8 @@ inoremap <silent> <leader>W <ESC>:wa!<CR>
 
 
 " toggle folds
-nnoremap <Space> zA
-vnoremap <Space> zA
+" nnoremap <Space> zA
+" vnoremap <Space> zA
 
 
 
@@ -193,18 +193,18 @@ xnoremap & <ESC>:%s/<C-r>=substitute(escape(GetVisualSelection(), '\/.*$^~[]'), 
 
 
 
-nnoremap <C-F2> :BookmarkToggle<CR>
-nnoremap <F26> :BookmarkToggle<CR>
+nnoremap <silent> <C-F2> :BookmarkToggle<CR>
+nnoremap <silent> <F26> :BookmarkToggle<CR>
 
-nnoremap <F2> :BookmarkNext<CR>
+nnoremap <silent> <F2> :BookmarkNext<CR>
 
-nnoremap <S-F2> :BookmarkPrev<CR>
-nnoremap <F14> :BookmarkPrev<CR>
+nnoremap <silent> <S-F2> :BookmarkPrev<CR>
+nnoremap <silent> <F14> :BookmarkPrev<CR>
 
-nnoremap <C-S-F2> :BookmarkClearAll<CR>
+nnoremap <silent> <C-S-F2> :BookmarkClearAll<CR>
 
-nnoremap <leader><leader> :BookmarkToggle<CR>
-nnoremap <leader>C :BookmarkClearAll<CR>
+nnoremap <silent> <leader><leader> :BookmarkToggle<CR>
+nnoremap <silent> <leader>C :BookmarkClearAll<CR>
 
 
 " fold mapping
@@ -222,24 +222,24 @@ nnoremap <silent> z9 :setl foldlevel=9<CR>
 
 
 "" Split
-noremap <Leader>h :<C-u>split<CR>
-noremap <Leader>v :<C-u>vsplit<CR>
+noremap <silent> <Leader>h :<C-u>split<CR>
+noremap <silent> <Leader>v :<C-u>vsplit<CR>
 
 "" Git
-noremap <Leader>ga :Gwrite<CR>
-noremap <Leader>gc :Gcommit<CR>
-noremap <Leader>gsh :Gpush<CR>
-noremap <Leader>gll :Gpull<CR>
-noremap <Leader>gs :Gstatus<CR>
-noremap <Leader>gb :Gblame<CR>
-noremap <Leader>gd :Gvdiff<CR>
-noremap <Leader>gr :Gremove<CR>
+" noremap <Leader>ga :Gwrite<CR>
+" noremap <Leader>gc :Gcommit<CR>
+" noremap <Leader>gsh :Gpush<CR>
+" noremap <Leader>gll :Gpull<CR>
+" noremap <Leader>gs :Gstatus<CR>
+" noremap <Leader>gb :Gblame<CR>
+" noremap <Leader>gd :Gvdiff<CR>
+" noremap <Leader>gr :Gremove<CR>
 
 
 
 "jump to first non-whitespace on line, jump to begining of line if already at first non-whitespace
-map <Home> :call LineHome()<CR>:echo<CR>
-imap <Home> <C-R>=LineHome()<CR>
+map <silent> <Home> :call LineHome()<CR>:echo<CR>
+imap <silent> <Home> <C-R>=LineHome()<CR>
 map ^[[1~ :call LineHome()<CR>:echo<CR>
 imap ^[[1~ <C-R>=LineHome()<CR>
 function! LineHome()
@@ -252,8 +252,8 @@ function! LineHome()
 endfunction
 
 " jump to the last non-whitespace char on line, or eol if already there
-map <End> :call LineEnd()<CR>:echo<CR>
-imap <End> <C-R>=LineEnd()<CR>
+map <silent> <End> :call LineEnd()<CR>:echo<CR>
+imap <silent> <End> <C-R>=LineEnd()<CR>
 function! LineEnd()
   let x = col('.')
     execute "normal g_"

@@ -11,8 +11,12 @@ if &term =~ '256color'
     set t_ut=
 endif
 
+if has('termguicolors')
+    set termguicolors
+endif
+
 set background=dark
-set termguicolors
+
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_contrast_light = 'hard'
 
