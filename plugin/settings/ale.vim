@@ -23,12 +23,12 @@ let g:ale_sign_column_always = 0
 let g:ale_sign_offset = 1000000
 let g:ale_warn_about_trailing_whitespace = 1
 
-"let g:ale_sign_error = '>>'
-let g:ale_sign_error = '💣'
-"let g:ale_sign_warning = '--'
-let g:ale_sign_warning = '🚩'
-"let g:ale_statusline_format = ['%d error(s)', '%d warning(s)', 'OK']
-let g:ale_statusline_format = ['💣 %d', '🚩 %d', '']
+let g:ale_sign_error = '>>'
+"let g:ale_sign_error = '💣'
+let g:ale_sign_warning = '--'
+"let g:ale_sign_warning = '🚩'
+let g:ale_statusline_format = ['%d error(s)', '%d warning(s)', 'OK']
+"let g:ale_statusline_format = ['💣 %d', '🚩 %d', '']
 
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
