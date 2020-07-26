@@ -9,10 +9,22 @@ if &term =~ '256color'
     " render properly when inside 256-color tmux and GNU screen.
     " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
     set t_ut=
+endif   
+
+if !exists('$TMUX') && has('termguicolors')
+    " enable termguicolors if
+    "   1. vim support termguicolors
+    "   2. not running inside tmux sessions
+    set termguicolors
 endif
 
-if has('termguicolors')
-    set termguicolors
+if exists('$TMUX')
+    if has('nvim')
+        set termguicolors
+    else
+        set term=screen-256color
+        set t_Co=256
+    endif
 endif
 
 set background=dark
