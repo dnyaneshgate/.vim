@@ -12,13 +12,12 @@ if &term =~ '256color'
 endif
 
 set background=dark
-
+set termguicolors
+let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_contrast_light = 'hard'
 
 try    
-    colorscheme iceberg
-    "Normal         xxx ctermfg=223 ctermbg=234 guifg=#ebdbb2 guibg=#1d2021
-    "hi Folded ctermbg=234 guibg=#1d2021
-    "hi FoldColumn ctermfg=223 ctermbg=234 guifg=#ebdbb2 guibg=#1d2021
+    colorscheme gruvbox
 catch
     colorscheme desert
 endtry

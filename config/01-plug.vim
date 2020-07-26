@@ -32,7 +32,8 @@ endif
 call plug#begin(expand(vimplug_path.'/plugged'))
 
     " colorschemes
-    Plug 'cocopon/iceberg.vim'
+    Plug 'morhetz/gruvbox'
+    Plug 'flazz/vim-colorschemes'
 
     " Teach VIM to recognize modified Function keys (in addition to Page and Arrow keys) produced by the xterm-256color terminal when Vim runs under the TERM=screen-256color environment.
     " https://sunaku.github.io/vim-256color-bce.html

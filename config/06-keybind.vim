@@ -237,6 +237,33 @@ noremap <Leader>gr :Gremove<CR>
 
 
 
+"jump to first non-whitespace on line, jump to begining of line if already at first non-whitespace
+map <Home> :call LineHome()<CR>:echo<CR>
+imap <Home> <C-R>=LineHome()<CR>
+map ^[[1~ :call LineHome()<CR>:echo<CR>
+imap ^[[1~ <C-R>=LineHome()<CR>
+function! LineHome()
+  let x = col('.')
+  execute "normal ^"
+  if x == col('.')
+    execute "normal 0"
+  endif
+  return ""
+endfunction
+
+" jump to the last non-whitespace char on line, or eol if already there
+map <End> :call LineEnd()<CR>:echo<CR>
+imap <End> <C-R>=LineEnd()<CR>
+function! LineEnd()
+  let x = col('.')
+    execute "normal g_"
+  if x == col('.')
+    execute "normal $"
+  endif
+ return ""
+endfunction
+
+
 " Remove the Windows ^M - when the encodings gets messed up
 " nnoremap <leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 " nnoremap <leader>M :%s/^\r$//g
