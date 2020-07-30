@@ -1,5 +1,5 @@
 " vim-airline
-let g:airline_theme = 'gruvbox'
+let g:airline_theme = 'ayu_mirage'
 let g:airline_skip_empty_sections = 1
 
 
