@@ -1,4 +1,8 @@
-let g:startify_session_dir = '$HOME/.vim/sessions'
+if has('nvim')
+    let g:startify_session_dir = g:root_dir . '/nvim-sessions'
+else
+    let g:startify_session_dir = g:root_dir . '/vim-sessions'
+endif
 let g:startify_change_to_dir = 0
 let g:startify_change_to_vcs_root = 1
 

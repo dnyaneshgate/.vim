@@ -24,7 +24,7 @@ set nobackup                                " enable backup files
 set nowritebackup                           " enable backup files
 set noswapfile                              " enable swap files (useful when loading huge files)
 
-let s:vimdir=$HOME . "/.vim"
+let s:vimdir = g:root_dir
 let &backupdir=s:vimdir . "/backup"         " backups location
 let &directory=s:vimdir . "/tmp"            " swap location
 
@@ -47,8 +47,11 @@ if has("persistent_undo")
     set undofile                                            " enable persistent undo
 endif
 
-let &viminfo=&viminfo . ",n" . s:vimdir . "/.viminfo"       " viminfo location
-
+if has('nvim')
+    let &viminfo=&viminfo . ",n" . s:vimdir . "/.nviminfo"  " viminfo location
+else
+    let &viminfo=&viminfo . ",n" . s:vimdir . "/.viminfo"   " viminfo location
+endif
 
 
 
@@ -315,3 +318,17 @@ cnoreabbrev Qall qall
 " Don't persist options and mappings because it can corrupt sessions.
 set sessionoptions-=options
 set sessionoptions-=folds
+
+
+" hides carriage returns in case of mixed line endings
+for i in ['cterm', 'gui']
+  for j in ['fg', 'bg']
+    let c = synIDattr(hlID('Normal'), 'bg', i)
+    if (!empty(c))
+        exec 'highlight CarriageReturn ' . i . j . '=' . c
+    endif
+  endfor
+endfor
+if hlID('CarriageReturn')
+    match CarriageReturn /\r$/
+endif

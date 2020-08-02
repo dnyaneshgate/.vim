@@ -4,8 +4,11 @@
 /tags
 /yankring
 /sessions
+/vim-sessions
+/nvim-sessions
 /autoload
 
 .netrwhist
-.viminfo
+.viminfo*
+.nviminfo*
 .NERDTreeBookmarks

@@ -6,14 +6,15 @@
 "       http://learnvimscriptthehardway.stevelosh.com/                      "
 "***************************************************************************"
 
+let s:vim_home_dir = expand($HOME . '/.vim')
 
-for f in split(glob(expand('~/.vim/config/').'*.vim'), '\n')
+for f in split(glob(expand(s:vim_home_dir .'/config/').'*.vim'), '\n')
     exe 'source' f
 endfor
 
 if !exists('g:not_finish_vimplug')
-    source ~/.vim/plugin/init.vim
-    if filereadable(expand("~/.vimrc.local"))
-        source ~/.vimrc.local
+    exec 'source' expand(s:vim_home_dir .'/plugin/init.vim')
+    if filereadable(expand($HOME . "/.vimrc.local"))
+        exec 'source' expand($HOME . '/.vimrc.local')
     endif
 endif

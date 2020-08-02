@@ -1,3 +1,8 @@
+
+let s:easytags_enabled = 0
+
+if s:easytags_enabled
+
 let g:easytags_async = 1
 let g:easytags_suppress_ctags_warning = 1
 
@@ -16,7 +21,7 @@ function! s:toggle_easytags_auto_highlight()
   endif
 endfunction
 
-let s:vimdir=$HOME . "/.vim"
+let s:vimdir = g:root_dir
 if exists("*mkdir")
   if !isdirectory(s:vimdir)
     call mkdir(s:vimdir, "p")
@@ -43,4 +48,6 @@ if has("unix")
             let g:easytags_cmd = "/opt/csw/bin/ectags"
         endif
     endif
+endif
+
 endif
