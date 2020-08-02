@@ -195,14 +195,10 @@ xnoremap & <ESC>:%s/<C-r>=substitute(escape(GetVisualSelection(), '\/.*$^~[]'), 
 
 nnoremap <silent> <C-F2> :BookmarkToggle<CR>
 nnoremap <silent> <F26> :BookmarkToggle<CR>
-
 nnoremap <silent> <F2> :BookmarkNext<CR>
-
 nnoremap <silent> <S-F2> :BookmarkPrev<CR>
 nnoremap <silent> <F14> :BookmarkPrev<CR>
-
 nnoremap <silent> <C-S-F2> :BookmarkClearAll<CR>
-
 nnoremap <silent> <leader><leader> :BookmarkToggle<CR>
 nnoremap <silent> <leader>C :BookmarkClearAll<CR>
 
@@ -238,10 +234,10 @@ noremap <silent> <Leader>v :<C-u>vsplit<CR>
 
 
 "jump to first non-whitespace on line, jump to begining of line if already at first non-whitespace
-map <silent> <Home> :call LineHome()<CR>:echo<CR>
-imap <silent> <Home> <C-R>=LineHome()<CR>
-map ^[[1~ :call LineHome()<CR>:echo<CR>
-imap ^[[1~ <C-R>=LineHome()<CR>
+map   <silent> <Home> :call LineHome()<CR>:echo<CR>
+imap  <silent> <Home> <C-R>=LineHome()<CR>
+map   <silent> ^[[1~  :call LineHome()<CR>:echo<CR>
+imap  <silent> ^[[1~  <C-R>=LineHome()<CR>
 function! LineHome()
   let x = col('.')
   execute "normal ^"
@@ -252,8 +248,10 @@ function! LineHome()
 endfunction
 
 " jump to the last non-whitespace char on line, or eol if already there
-map <silent> <End> :call LineEnd()<CR>:echo<CR>
-imap <silent> <End> <C-R>=LineEnd()<CR>
+map   <silent> <End> :call LineEnd()<CR>:echo<CR>
+imap  <silent> <End> <C-R>=LineEnd()<CR>
+map   <silent> ^[[4~ :call LineEnd()<CR>:echo<CR>
+imap  <silent> ^[[4~ <C-R>=LineEnd()<CR>
 function! LineEnd()
   let x = col('.')
     execute "normal g_"
