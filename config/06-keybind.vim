@@ -234,10 +234,10 @@ noremap <silent> <Leader>v :<C-u>vsplit<CR>
 
 
 "jump to first non-whitespace on line, jump to begining of line if already at first non-whitespace
-map   <silent> <Home> :call LineHome()<CR>:echo<CR>
-imap  <silent> <Home> <C-R>=LineHome()<CR>
-map   <silent> ^[[1~  :call LineHome()<CR>:echo<CR>
-imap  <silent> ^[[1~  <C-R>=LineHome()<CR>
+nnoremap   <silent> <Home> :call LineHome()<CR>:echo<CR>
+inoremap   <silent> <Home> <C-R>=LineHome()<CR>
+nnoremap   <silent> ^[[1~  :call LineHome()<CR>:echo<CR>
+inoremap   <silent> ^[[1~  <C-R>=LineHome()<CR>
 function! LineHome()
   let x = col('.')
   execute "normal ^"
@@ -248,15 +248,15 @@ function! LineHome()
 endfunction
 
 " jump to the last non-whitespace char on line, or eol if already there
-map   <silent> <End> :call LineEnd()<CR>:echo<CR>
-imap  <silent> <End> <C-R>=LineEnd()<CR>
-map   <silent> ^[[4~ :call LineEnd()<CR>:echo<CR>
-imap  <silent> ^[[4~ <C-R>=LineEnd()<CR>
+nnoremap   <silent> <End> :call LineEnd()<CR>:echo<CR>
+inoremap   <silent> <End> <C-R>=LineEnd()<CR>
+nnoremap   <silent> ^[[4~ :call LineEnd()<CR>:echo<CR>
+inoremap   <silent> ^[[4~ <C-R>=LineEnd()<CR>
 function! LineEnd()
   let x = col('.')
-    execute "normal g_"
+  execute "normal $"
   if x == col('.')
-    execute "normal $"
+    execute "normal g_"
   endif
  return ""
 endfunction
