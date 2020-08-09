@@ -35,26 +35,21 @@ endif
 
 call plug#begin(expand(vimplug_path.'/plugged'))
     Plug 'airblade/vim-gitgutter'
+    Plug 'airblade/vim-rooter'
     Plug 'benmills/vimux'
     Plug 'chrisbra/csv.vim'
     Plug 'ctrlpvim/ctrlp.vim'
     Plug 'dense-analysis/ale'
     Plug 'ervandew/supertab'
-    Plug 'easymotion/vim-easymotion'
     Plug 'flazz/vim-colorschemes'
     Plug 'godlygeek/tabular'
-    Plug 'justinmk/vim-sneak'
     Plug 'Konfekt/FastFold'
+    Plug 'ludwig/split-manpage.vim'
     Plug 'luochen1990/rainbow'
-    Plug 'majutsushi/tagbar'
     Plug 'MattesGroeger/vim-bookmarks'
     Plug 'mhinz/vim-startify'
     Plug 'mhinz/vim-grepper'
     Plug 'morhetz/gruvbox'
-    " Teach VIM to recognize modified Function keys (in addition to Page and Arrow keys)
-    " produced by the xterm-256color terminal when Vim runs under the TERM=screen-256color environment.
-    " https://sunaku.github.io/vim-256color-bce.html
-    Plug 'nacitar/terminalkeys.vim'
     Plug 'ntpeters/vim-better-whitespace'
     Plug 'pseewald/anyfold'
     Plug 'sheerun/vim-polyglot'
@@ -71,7 +66,5 @@ call plug#begin(expand(vimplug_path.'/plugged'))
     Plug 'vim-airline/vim-airline-themes'
     Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
     Plug 'xolox/vim-misc'
-    Plug 'xolox/vim-session'
     Plug 'xolox/vim-shell'
-    "Plug 'xolox/vim-easytags'
 call plug#end()

@@ -4,8 +4,7 @@ else
     let g:startify_session_dir = g:root_dir . '/vim-sessions'
 endif
 let g:startify_change_to_dir = 0
-let g:startify_change_to_vcs_root = 1
-
+let g:startify_change_to_vcs_root = 0
 let g:startify_session_autoload = 0
 let g:startify_session_before_save = [
         \ 'echo "Cleaning up before saving.."',

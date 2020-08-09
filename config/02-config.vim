@@ -7,15 +7,12 @@ set nocompatible                            " the future is now, use vim default
 set nomodeline                              " disable mode lines (security measure)
 set history=1000                            " boost commands and search patterns history
 set undolevels=1000                         " boost undo levels
-
+set noshelltemp                             " use pipes instead of temp files for shell commands
+set timeoutlen=500                          " time in milliseconds for a key sequence to complete
+set updatetime=100                          " default updatetime 4000ms is not good for async update
 if exists("+shellslash")
     set shellslash                          " expand filenames with forward slash
 endif
-
-set noshelltemp                             " use pipes instead of temp files for shell commands
-
-set timeoutlen=500                          " time in milliseconds for a key sequence to complete
-
 
 
 " -- backup and swap files -----------------------------------------------------
@@ -118,6 +115,11 @@ set linespace=2                         " ease reading in GUI mode by inserting 
 set modeline                            " use modeline overrides
 set modelines=10
 set laststatus=2                        " always show statusline
+if has("patch-8.1.1564")
+    set signcolumn=number               " Recently vim can merge signcolumn and number column into one
+else
+    set signcolumn=yes                  " always show sogncolumn
+endif
 
 if has("autocmd")
     augroup vim

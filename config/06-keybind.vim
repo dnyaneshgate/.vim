@@ -15,13 +15,13 @@ nnoremap <silent> <leader>l :set list! list?<CR>
 nnoremap <silent> <leader>cd :cd %:p:h<CR>
 
 " Buffer navigation
-nnoremap <silent><M-Right> :bn<CR>
-nnoremap <silent><M-Left> :bp<CR>
-nnoremap <silent><leader>x :bnext<cr>
-nnoremap <silent><leader>z :bprevious<cr>
+nnoremap <silent> <C-Right> :bn<CR>
+nnoremap <silent> <C-Left>  :bp<CR>
+nnoremap <silent> <Tab>     :bn<cr>
+nnoremap <silent> <S-Tab>   :bp<cr>
 
 " Open Buffer
-nnoremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+nnoremap <leader>e :edit <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap <silent> <leader>b :Buffers<CR>
 
 "" Close buffer
@@ -59,10 +59,10 @@ map <C-Down> <C-e>
 nnoremap <silent> <Tab><Tab> <C-w>w
 
 " window resizing
-map <S-Left> <C-w><
-map <S-Down> <C-w>-
-map <S-Up> <C-w>+
-map <S-Right> <C-w>>
+" map <S-Left> <C-w><
+" map <S-Down> <C-w>-
+" map <S-Up> <C-w>+
+" map <S-Right> <C-w>>
 
 " <leader>q quits the current window
 nnoremap <silent> <leader>q :q<CR>
@@ -130,12 +130,6 @@ nnoremap S :call Preserve("normal! i\r")<CR>
 " select what was just pasted
 nnoremap <leader>v V`]
 
-" <C-Space> triggers completion in insert mode
-inoremap <C-Space> <C-P>
-if !has("gui_running")
-  inoremap <C-@> <C-P>
-endif
-
 " move current line down
 noremap <silent>- :m+<CR>
 " move current line up
@@ -192,17 +186,6 @@ xnoremap / <ESC>/<C-r>=substitute(escape(GetVisualSelection(), '\/.*$^~[]'), "\n
 xnoremap & <ESC>:%s/<C-r>=substitute(escape(GetVisualSelection(), '\/.*$^~[]'), "\n", '\\n', "g")<CR>/
 
 
-
-nnoremap <silent> <C-F2> :BookmarkToggle<CR>
-nnoremap <silent> <F26> :BookmarkToggle<CR>
-nnoremap <silent> <F2> :BookmarkNext<CR>
-nnoremap <silent> <S-F2> :BookmarkPrev<CR>
-nnoremap <silent> <F14> :BookmarkPrev<CR>
-nnoremap <silent> <C-S-F2> :BookmarkClearAll<CR>
-nnoremap <silent> <leader><leader> :BookmarkToggle<CR>
-nnoremap <silent> <leader>C :BookmarkClearAll<CR>
-
-
 " fold mapping
 nnoremap <silent> z0 :setl foldlevel=0<CR>
 nnoremap <silent> z1 :setl foldlevel=1<CR>
@@ -221,23 +204,10 @@ nnoremap <silent> z9 :setl foldlevel=9<CR>
 noremap <silent> <Leader>h :<C-u>split<CR>
 noremap <silent> <Leader>v :<C-u>vsplit<CR>
 
-"" Git
-" noremap <Leader>ga :Gwrite<CR>
-" noremap <Leader>gc :Gcommit<CR>
-" noremap <Leader>gsh :Gpush<CR>
-" noremap <Leader>gll :Gpull<CR>
-" noremap <Leader>gs :Gstatus<CR>
-" noremap <Leader>gb :Gblame<CR>
-" noremap <Leader>gd :Gvdiff<CR>
-" noremap <Leader>gr :Gremove<CR>
-
-
 
 "jump to first non-whitespace on line, jump to begining of line if already at first non-whitespace
 nnoremap   <silent> <Home> :call LineHome()<CR>:echo<CR>
 inoremap   <silent> <Home> <C-R>=LineHome()<CR>
-nnoremap   <silent> ^[[1~  :call LineHome()<CR>:echo<CR>
-inoremap   <silent> ^[[1~  <C-R>=LineHome()<CR>
 function! LineHome()
   let x = col('.')
   execute "normal ^"
@@ -250,8 +220,6 @@ endfunction
 " jump to the last non-whitespace char on line, or eol if already there
 nnoremap   <silent> <End> :call LineEnd()<CR>:echo<CR>
 inoremap   <silent> <End> <C-R>=LineEnd()<CR>
-nnoremap   <silent> ^[[4~ :call LineEnd()<CR>:echo<CR>
-inoremap   <silent> ^[[4~ <C-R>=LineEnd()<CR>
 function! LineEnd()
   let x = col('.')
   execute "normal $"
@@ -262,6 +230,15 @@ function! LineEnd()
 endfunction
 
 
-" Remove the Windows ^M - when the encodings gets messed up
-" nnoremap <leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
-" nnoremap <leader>M :%s/^\r$//g
+" map keys
+nmap ^[[1~ <Home>
+nmap ^[[4~ <End>
+nmap <F26> <C-F2>
+nmap <F12> <S-F2>
+nmap <F14> <S-F2>       " microsoft terminal
+
+imap ^[[1~ <Home>
+imap ^[[4~ <End>
+imap <F26> <C-F2>
+imap <F12> <S-F2>
+imap <F14> <S-F2>       " microsoft terminal
