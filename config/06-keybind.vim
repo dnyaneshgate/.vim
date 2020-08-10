@@ -15,13 +15,13 @@ nnoremap <silent> <leader>l :set list! list?<CR>
 nnoremap <silent> <leader>cd :cd %:p:h<CR>
 
 " Buffer navigation
-nnoremap <silent><M-Right> :bn<CR>
-nnoremap <silent><M-Left> :bp<CR>
-nnoremap <silent><leader>x :bnext<cr>
-nnoremap <silent><leader>z :bprevious<cr>
+nnoremap <silent> <C-Right> :bn<CR>
+nnoremap <silent> <C-Left>  :bp<CR>
+nnoremap <silent> <Tab>     :bn<cr>
+nnoremap <silent> <S-Tab>   :bp<cr>
 
 " Open Buffer
-nnoremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+nnoremap <leader>e :edit <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap <silent> <leader>b :Buffers<CR>
 
 "" Close buffer
@@ -123,12 +123,6 @@ nnoremap S :call Preserve("normal! i\r")<CR>
 
 " select what was just pasted
 nnoremap <leader>v V`]
-
-" <C-Space> triggers completion in insert mode
-inoremap <C-Space> <C-P>
-if !has("gui_running")
-  inoremap <C-@> <C-P>
-endif
 
 " move current line down
 noremap <silent>- :m+<CR>
@@ -235,8 +229,10 @@ nmap ^[[1~ <Home>
 nmap ^[[4~ <End>
 nmap <F26> <C-F2>
 nmap <F12> <S-F2>
+nmap <F14> <S-F2>       " microsoft terminal
 
 imap ^[[1~ <Home>
 imap ^[[4~ <End>
 imap <F26> <C-F2>
 imap <F12> <S-F2>
+imap <F14> <S-F2>       " microsoft terminal

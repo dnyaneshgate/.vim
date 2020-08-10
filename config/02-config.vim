@@ -115,7 +115,11 @@ set linespace=2                         " ease reading in GUI mode by inserting 
 set modeline                            " use modeline overrides
 set modelines=10
 set laststatus=2                        " always show statusline
-set signcolumn=auto                     " always show signcolumns
+if has("patch-8.1.1564")
+    set signcolumn=number               " Recently vim can merge signcolumn and number column into one
+else
+    set signcolumn=yes                  " always show sogncolumn
+endif
 
 if has("autocmd")
     augroup vim

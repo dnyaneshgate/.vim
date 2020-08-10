@@ -65,7 +65,11 @@ endif
 
 function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
-    setlocal signcolumn=yes
+    if has("patch-8.1.1564")
+        setl signcolumn=number          " Recently vim can merge signcolumn and number column into one
+    else
+        setl signcolumn=yes             " always show signcolumns
+    endif
     if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
     nmap <buffer> gd <plug>(lsp-definition)
     nmap <buffer> gr <plug>(lsp-references)
