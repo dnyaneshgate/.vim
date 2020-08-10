@@ -28,10 +28,6 @@ augroup vimrc-make-cmake
 augroup END
 
 
-
-
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " python
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -86,7 +82,7 @@ autocmd FileType rust setlocal
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " json
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-au FileType json setlocal nowrap
+au FileType json setlocal nowrap expandtab
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " xml
@@ -97,7 +93,7 @@ au FileType xml setl nowrap expandtab
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " coffee script
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-au FileType coffee setlocal foldmethod=indent
+au FileType coffee setlocal foldmethod=indent expandtab
 
 
 
@@ -114,9 +110,6 @@ au FileType yaml.docker-compose setlocal tabstop=4 shiftwidth=4 expandtab
 " git commit
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 au FileType gitcommit call setpos('.', [0, 1, 1, 0])
-
-
-
 
 
 """"""""""""""""""""""""""""""

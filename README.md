@@ -7,3 +7,5 @@ vim configuration files
 `cd $HOME/.vim && git checkout vim`
 
 `ln -sf $HOME/.vim/init.vim $HOME/.vimrc`
+
+`vim -c "PlugInstall|q"`
