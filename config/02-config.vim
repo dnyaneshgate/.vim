@@ -66,7 +66,7 @@ filetype indent on          " indent based on file type syntax
 
 set wildmenu                                            " enable tab completion menu
 set wildmode=longest:full,full                          " complete till longest common string, then full
-set wildignore+=*~,*/tmp/*,*.o,*.swp,*.pyc
+set wildignore+=*~,*/tmp/*,*.o,*.obj,*.so,*.so.*,*.a,*.la,*.rbc,*.pyc,__pycache__,cscope.*,.ccls*
 if has("win16") || has("win32")
         set wildignore+=.git\*,.hg\*,.svn\*
 else
