@@ -109,7 +109,7 @@ set visualbell t_vb=                    " use visual bell instead of error bell
 set mousehide                           " hide mouse pointer when typing
 set showcmd                             " show partial command line (default)
 set cmdheight=1                         " height of the command line
-set shortmess=astT                      " abbreviate messages
+set shortmess=astToO                    " abbreviate messages
 set shortmess+=I                        " disable the welcome screen
 set linespace=2                         " ease reading in GUI mode by inserting space between lines
 set modeline                            " use modeline overrides
