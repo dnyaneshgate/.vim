@@ -60,7 +60,7 @@ let $FZF_DEFAULT_COMMAND =  "find * -path '*/\.*' -prune -o -path 'node_modules/
 " --color: Search color options
 " ripgrep
 if executable('rg')
-    let s:ignore_files  = "'!{.git,*.o,*.obj,*.so,*.so.*,*.a,*.la,*.rbc,*.pyc,__pycache__,cscope.*,*ccls*}'"
+    let s:ignore_files  = "'!{.git,*.o,*.obj,*.so,*.so.*,*.a,*.la,*.rbc,*.pyc,__pycache__,cscope.*,.ccls*}'"
     let s:rg_search_cmd = "rg --column --line-number --no-heading --color=always --fixed-strings --smart-case --no-ignore --hidden --follow --glob " . s:ignore_files . " "
     let $FZF_DEFAULT_COMMAND = "rg --files --no-ignore --hidden --follow --glob " . s:ignore_files
     set grepprg=rg\ --vimgrep\ --smart-case\ --follow
@@ -79,7 +79,8 @@ if executable('rg')
     command! -bang -nargs=* RGWord   call RipgrepFzf(expand('<cword>'), <bang>0)
 endif
 
-nnoremap <silent> <C-p>     :FZF -m<CR>
+" nnoremap <silent> <C-p>     :FZF -m<CR>
+nnoremap <silent> <C-p>     :Files<CR>
 
 if executable('rg')
     nnoremap <silent> <leader>f :FindWord<cr>
