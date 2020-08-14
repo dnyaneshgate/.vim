@@ -112,14 +112,14 @@ set cmdheight=1                         " height of the command line
 set shortmess=astToO                    " abbreviate messages
 set shortmess+=I                        " disable the welcome screen
 set linespace=2                         " ease reading in GUI mode by inserting space between lines
-set modeline                            " use modeline overrides
-set modelines=10
 set laststatus=2                        " always show statusline
 if has("patch-8.1.1564")
     set signcolumn=number               " Recently vim can merge signcolumn and number column into one
 else
     set signcolumn=yes                  " always show sogncolumn
 endif
+" set modeline                            " use modeline overrides
+" set modelines=10
 
 if has("autocmd")
     augroup vim
