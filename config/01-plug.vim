@@ -26,11 +26,13 @@ endif
 call plug#begin(expand(vimplug_path.'/plugged'))
     Plug 'airblade/vim-gitgutter'
     Plug 'airblade/vim-rooter'
+    Plug 'bazelbuild/vim-bazel'
     Plug 'benmills/vimux'
     Plug 'chrisbra/csv.vim'
     Plug 'ervandew/supertab'
     Plug 'flazz/vim-colorschemes'
     Plug 'godlygeek/tabular'
+    Plug 'google/vim-maktaba'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'Konfekt/FastFold'
